@@ -280,7 +280,7 @@ public class DataAccess implements IProductService, ICategoryService {
             //this.connect();
 
             String sql = "UPDATE  category "
-                    + "SET catname=?,"
+                    + "SET catname=? "
                     + "WHERE categoryId = ?";
 
             PreparedStatement pstmt = conn.prepareStatement(sql);
