@@ -3,7 +3,7 @@ package co.com.hyunseda.market;
 
 import co.com.hyunseda.market.presentation.GUIProducts;
 import co.com.hyunseda.market.service.CategoryService;
-import co.com.hyunseda.market.service.Factory;
+import co.com.hyunseda.market.access.Factory;
 import co.com.hyunseda.market.service.ICategoryService;
 import co.com.hyunseda.market.service.IProductService;
 import co.com.hyunseda.market.service.ProductService;

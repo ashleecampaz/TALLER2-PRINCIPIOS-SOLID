@@ -2,10 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.com.hyunseda.market.service;
+package co.com.hyunseda.market.access;
 
 import co.com.hyunseda.market.domain.Category;
 import co.com.hyunseda.market.domain.Product;
+import co.com.hyunseda.market.service.ICategoryService;
+import co.com.hyunseda.market.service.IProductService;
+import co.com.hyunseda.market.service.ProductService;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
