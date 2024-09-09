@@ -110,19 +110,21 @@ public class GUIProductsFind extends javax.swing.JDialog implements Observer {
         pnlNorth.add(jLabel1);
 
         buttonGroup1.add(rdoId);
-        rdoId.setSelected(true);
         rdoId.setText("Id");
         pnlNorth.add(rdoId);
 
         buttonGroup1.add(rdoName);
+        rdoName.setSelected(true);
         rdoName.setText("Nombre del producto");
         pnlNorth.add(rdoName);
 
         txtSearch.setPreferredSize(new java.awt.Dimension(62, 32));
         pnlNorth.add(txtSearch);
 
+        rdoCat.setSelected(true);
         rdoCat.setText("Categoria");
         pnlNorth.add(rdoCat);
+        buttonGroup1.add(rdoCat);
 
         cmbCat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         pnlNorth.add(cmbCat);
@@ -181,7 +183,8 @@ public class GUIProductsFind extends javax.swing.JDialog implements Observer {
       }
       if(rdoCat.isSelected()){
           int index = cmbCat.getSelectedIndex();
-          //fillTable(productService.findAllCat());
+          Category catSelected = categories.get(index);
+          fillTable(productService.findByCat(catSelected.getCategoryId()));
       }
       
       if(rdoName.isSelected()){

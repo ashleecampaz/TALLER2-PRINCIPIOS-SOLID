@@ -16,6 +16,7 @@ public interface IProductService {
      boolean save(Product newProduct, long catId);
      List<Product> findAll();
      List<Product> findAllCat();
+     List<Product> findByCat(long catId);
      public List<Product> findByName(String name);
      boolean edit(Long id, Product product);
      Product findById(Long id);

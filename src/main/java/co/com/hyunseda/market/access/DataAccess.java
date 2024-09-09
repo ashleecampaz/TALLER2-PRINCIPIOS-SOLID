@@ -417,4 +417,36 @@ public class DataAccess implements IProductService, ICategoryService {
         return products;
     }
     
+    public List<Product> findByCat(long catId) {
+        List<Product> products = new ArrayList<>();
+        try {
+
+            String sql = "SELECT * FROM products "
+                    + "INNER JOIN category ON products.categoryId = category.categoryId "
+                    + "WHERE category.categoryId = ?";
+            //this.connect();
+
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setLong(1, catId );
+
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Product newProduct = new Product();
+                newProduct.setProductId(rs.getLong("productId"));
+                newProduct.setName(rs.getString("name"));
+                newProduct.setDescription(rs.getString("description"));
+                Category newCategory = new Category();
+                newCategory.setCategoryId(rs.getLong("categoryId"));
+                newCategory.setName(rs.getString("catname"));
+                newProduct.setCategory(newCategory);
+                products.add(newProduct);
+            }
+            //this.disconnect();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return products;
+    }
+    
 }

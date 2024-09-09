@@ -76,7 +76,7 @@ public class ProductService {
         return Data.findAllCat();
     }
     
-    public List<Product> findByCat(){
-        return Data.findAllCat();
+    public List<Product> findByCat(long catId){
+        return Data.findByCat(catId);
     }
 }
