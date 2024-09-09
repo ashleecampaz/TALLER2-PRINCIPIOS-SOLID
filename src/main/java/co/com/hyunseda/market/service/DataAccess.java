@@ -262,6 +262,7 @@ public class DataAccess implements IProductService, ICategoryService {
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, newCategory.getName());
             pstmt.executeUpdate();
+            
             //this.disconnect();
             return true;
         } catch (SQLException ex) {
@@ -287,6 +288,7 @@ public class DataAccess implements IProductService, ICategoryService {
             pstmt.setString(1, category.getName());
             pstmt.setLong(2, id);
             pstmt.executeUpdate();
+            
             //this.disconnect();
             return true;
         } catch (SQLException ex) {
@@ -306,10 +308,10 @@ public class DataAccess implements IProductService, ICategoryService {
 
             String sql = "DELETE FROM category "
                     + "WHERE categoryId = ?";
-
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setLong(1, id);
             pstmt.executeUpdate();
+            
             //this.disconnect();
             return true;
         } catch (SQLException ex) {

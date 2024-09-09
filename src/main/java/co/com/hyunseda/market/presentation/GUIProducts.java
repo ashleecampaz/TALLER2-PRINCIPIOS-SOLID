@@ -367,11 +367,10 @@ public class GUIProducts extends javax.swing.JFrame implements Observer {
         for(Category cat:categories ){
             cmbCat.addItem(cat.getName());
         }
-    };
+    }
 
     @Override
     public void update(Object o) {
-        categoryService = (CategoryService) o;
         fillComboBox();
     }
    

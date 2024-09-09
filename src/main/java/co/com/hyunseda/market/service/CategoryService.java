@@ -26,12 +26,12 @@ public class CategoryService extends Subject{
         if (newCategory.getName().isEmpty() ) {
             return false;
         }
-        this.notifyAllObserves();
+        
         return Data.save(newCategory);
     }
     
      public boolean deleteProduct(Long id){
-         this.notifyAllObserves();
+        
         return Data.deleteCat(id);
     }
 
@@ -41,6 +41,7 @@ public class CategoryService extends Subject{
         if (cat == null || cat.getName().isEmpty() ) {
             return false;
         }
+      
         return Data.edit(productId, cat);
     }
     
