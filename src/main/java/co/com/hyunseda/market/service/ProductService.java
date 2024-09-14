@@ -13,7 +13,7 @@ import java.util.List;
  * @author Libardo Pantoja, Julio Hurtado
  */
 public class ProductService {
-
+      
       private IProductService Data;
     
     /**
@@ -23,6 +23,7 @@ public class ProductService {
      */ 
      public ProductService(IProductService data) {
         this.Data = data;
+        
     }
     
 

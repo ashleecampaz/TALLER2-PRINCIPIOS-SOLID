@@ -4,7 +4,6 @@
  */
 package co.com.hyunseda.market.access;
 
-import co.com.hyunseda.market.access.DataAccess;
 import co.com.hyunseda.market.service.IProductService;
 
 /**
@@ -46,7 +45,6 @@ public class Factory {
                 result = new DataAccess();
                 break;
         }
-
         return result;
 
     }

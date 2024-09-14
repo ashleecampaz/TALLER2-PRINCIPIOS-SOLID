@@ -30,19 +30,18 @@ public class CategoryService extends Subject{
         return Data.save(newCategory);
     }
     
-     public boolean deleteProduct(Long id){
+     public boolean deleteCategory(Long id){
         
         return Data.deleteCat(id);
     }
 
-    public boolean editProduct(Long productId, Category cat) {
+    public boolean editCategory(Long categoryId, Category cat) {
         
-        //Validate product
         if (cat == null || cat.getName().isEmpty() ) {
             return false;
         }
       
-        return Data.edit(productId, cat);
+        return Data.edit(categoryId, cat);
     }
     
      public Category findCategoryById(Long id){

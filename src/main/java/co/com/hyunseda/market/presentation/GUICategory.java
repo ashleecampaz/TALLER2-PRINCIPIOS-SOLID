@@ -179,7 +179,7 @@ public class GUICategory extends javax.swing.JDialog {
         }
         Long productId = Long.parseLong(id);
         if (Messages.showConfirmDialog("Está seguro que desea eliminar este producto?", "Confirmación") == JOptionPane.YES_NO_OPTION) {
-            if (categoryService.deleteProduct(productId)) {
+            if (categoryService.deleteCategory(productId)) {
                 categoryService.notifyAllObserves();
                 Messages.showMessageDialog("Producto eliminado con éxito", "Atención");
                 stateInitial();
@@ -285,7 +285,7 @@ public class GUICategory extends javax.swing.JDialog {
         Category cat = new Category();
         cat.setName(txtName.getText().trim());
 
-        if (categoryService.editProduct(CategoryId, cat)) {
+        if (categoryService.editCategory(CategoryId, cat)) {
             categoryService.notifyAllObserves();
             Messages.showMessageDialog("Se editó con éxito", "Atención");
             cleanControls();

@@ -21,16 +21,17 @@ public class Product {
     
     private User user;
 
-    public Product(Long productId, String name, String description, double price) {
-        this.productId = productId;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-    }
-
     public Product() {
     }
-
+    public Product(String name, String description){
+        this.name = name;
+        this.description = description;
+    }
+    public Product(String name, String description,Category cat) {
+        this.name = name;
+        this.description = description;
+         this.category = cat;
+    }
     public Long getProductId() {
         return productId;
     }
@@ -87,6 +88,12 @@ public class Product {
         this.user = user;
     }
     
-
+    public boolean equals(Product pro){
+        return productId == pro.productId;
+    }
+    
+    public boolean equalsCat(Product pro){
+        return category.getCategoryId()== pro.category.getCategoryId();
+    }
 
 }
